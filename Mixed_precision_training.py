@@ -86,7 +86,7 @@ checkpoint_callback = ModelCheckpoint(
     save_top_k=1,
 )
 
-# Initialize the Trainer
+# Initialize the Trainer "precision=16" means Half precision training
 trainer = Trainer(
     gpus=-1 if torch.cuda.is_available() else None,
     strategy='ddp',
